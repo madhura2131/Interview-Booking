@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewBooking", "InterviewBooking\InterviewBooking.csproj", "{DB017F93-4FA1-43C8-833E-EBB53AC36585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{0C1799D2-1D6E-44EF-BE11-4E00AC088F7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB017F93-4FA1-43C8-833E-EBB53AC36585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB017F93-4FA1-43C8-833E-EBB53AC36585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB017F93-4FA1-43C8-833E-EBB53AC36585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB017F93-4FA1-43C8-833E-EBB53AC36585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1799D2-1D6E-44EF-BE11-4E00AC088F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1799D2-1D6E-44EF-BE11-4E00AC088F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1799D2-1D6E-44EF-BE11-4E00AC088F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1799D2-1D6E-44EF-BE11-4E00AC088F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1DE8AA7-3345-46C1-8FDE-DB8FDB692B70}
+	EndGlobalSection
+EndGlobal
