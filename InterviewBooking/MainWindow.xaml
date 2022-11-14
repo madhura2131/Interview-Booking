@@ -1,0 +1,206 @@
+﻿<Window x:Class="InterviewBooking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterviewBooking"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="740" Width="1000"  ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.Resources>
+            <local:SalaryConverter x:Key="SalaryConverter"/>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Style.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Style.Resources>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Background" Value="#FF3A3737"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Height="800" Width="1000">
+            <StackPanel Height="40" HorizontalAlignment="Center">
+                <Label Content="Interview Booking System" FontFamily="Arial Rounded MT Bold" FontSize="20" FontStyle="Normal" FontWeight="Normal" Foreground="#FFF13A3A"></Label>
+            </StackPanel>
+            <Grid>
+                <StackPanel  Height="760" Width="1000" Orientation="Vertical" >
+                    
+                    <StackPanel Height="400" Width="1000">
+                        <Border Height="390" Width="900" BorderBrush="Black" Background="AntiqueWhite"  BorderThickness="1,1,1,1" >
+                            <StackPanel Height="390" Width="900" Orientation="Vertical" VerticalAlignment="Top">
+                                <StackPanel Height="330" Background="AntiqueWhite" Width="900" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <StackPanel Height="400" Width="450" HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <StackPanel Orientation="Vertical"  Width="450" VerticalAlignment="Top" HorizontalAlignment="Center" >
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Label Content="Appointment Information" HorizontalAlignment="Center" FontWeight="Bold"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Interview date:"/>
+                                                <ComboBox Width="250" SelectedIndex="0" ItemsSource="{Binding Path=AvailableDate}" DisplayMemberPath="Date"  IsSynchronizedWithCurrentItem="true" Name="cmbInterviewDate" Height="25"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Interview time:"/>
+                                                <ComboBox Width="250" SelectedIndex="0" ItemsSource="{Binding Path=AvailableDate/Time}"  IsSynchronizedWithCurrentItem="true"  Name="cmbInterviewTime" Height="25"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                                                <Label Content="Candidate Information" HorizontalAlignment="Center" FontWeight="Bold"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Candidate Name:"/>
+                                                <TextBox Width="250" Name="txtCandidateName" ToolTip="{Binding ElementName=txtCandidateName, Path=(Validation.Errors)[0].ErrorContent}" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Binding Path="Candidate.Name">
+                                                        <Binding.ValidationRules>
+                                                            <local:CandidateNameRule />
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Candidate Email:"/>
+                                                <TextBox Width="250" Name="txtCandidateEmail" ToolTip="{Binding ElementName=txtCandidateEmail, Path=(Validation.Errors)[0].ErrorContent}" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Binding Path="Candidate.EmailAddress">
+                                                        <Binding.ValidationRules>
+                                                            <local:EmailRule />
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Candidate Mobile:"/>
+                                                <TextBox Width="250" Name="txtCandidateMobile" ToolTip="{Binding ElementName=txtCandidateMobile, Path=(Validation.Errors)[0].ErrorContent}" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Binding Path="Candidate.MobileNumber">
+                                                        <Binding.ValidationRules>
+                                                            <local:MobileRule />
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Candidate Age:"/>
+                                                <TextBox Width="250" Name="txtCandidateAge"  ToolTip="{Binding ElementName=txtCandidateAge, Path=(Validation.Errors)[0].ErrorContent}" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Binding Path="Candidate.Age">
+                                                        <Binding.ValidationRules>
+                                                            <local:AgeRule />
+                                                        </Binding.ValidationRules>
+                                                    </Binding>
+                                                </TextBox>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Candidate Gender:"/>
+                                                <StackPanel Width="250" Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <RadioButton Width="60" Content="Male" Name="radioMale" GroupName="gender"></RadioButton>
+                                                    <RadioButton Width="60" Content="Female" Name="radiofemale" GroupName="gender"></RadioButton>
+                                                    <RadioButton Width="60" Content="Other" Name="radioOther" GroupName="gender"></RadioButton>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Height="330" Width="450" Background="AntiqueWhite" HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <StackPanel Orientation="Vertical" Width="450" VerticalAlignment="Top">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Label Content="Job Information" FontWeight="Bold"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="60,10,0,0" Width="400" >
+                                                <StackPanel Width="400"  Orientation="Horizontal" HorizontalAlignment="Center" >
+                                                    <RadioButton Width="100" Content="Architecture" Name="radioArchitect" GroupName="field" Checked="OnFieldChange"></RadioButton>
+                                                    <RadioButton Width="100"  Content="Business" Name="radioBusiness" GroupName="field"  Checked="OnFieldChange"></RadioButton>
+                                                    <RadioButton Width="150"  Content="Information Technology" Name="radioIT" GroupName="field"  Checked="OnFieldChange"></RadioButton>
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,20,0,0" Height="100" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top" >
+                                                <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Select Position:"/>
+                                                <StackPanel Visibility="Collapsed" Name="panelArchitect" Width="250" Height="100"  Orientation="Vertical" VerticalAlignment="Top">
+                                                    <RadioButton Name="Architect" Content="Architect" GroupName="architectGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="ConstructionLaborer" Content="Construction Laborer" GroupName="architectGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="Electrician" Content="Electrician" GroupName="architectGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="CivilEngineer" Content="Civil Engineer" GroupName="architectGroup" Checked="OnPositionSelected"></RadioButton>
+                                                </StackPanel>
+                                                <StackPanel Visibility="Collapsed" Name="panelBusiness" Width="250" Height="100"  Orientation="Vertical" VerticalAlignment="Top">
+                                                    <RadioButton Name="HumanResourcesManager" Content="Human Resources Manager" GroupName="businessGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="Accounting" Content="Accounting" GroupName="businessGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="FinancialAnalyst" Content="Financial Analyst" GroupName="businessGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="LoanOfficer" Content="Loan Officer" GroupName="businessGroup" Checked="OnPositionSelected"></RadioButton>
+                                                </StackPanel>
+                                                <StackPanel Visibility="Visible" Name="panelInformationTechnology" Width="250" Height="100"  Orientation="Vertical" VerticalAlignment="Top">
+                                                    <RadioButton Name="ComputerProgrammer" Content="Computer Programmer" GroupName="ITGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="WebDeveloper" Content="Web Developer" GroupName="ITGroup" Checked="OnPositionSelected"></RadioButton>
+                                                    <RadioButton Name="DatabaseAdministrator" Content="DatabaseAdministrator" GroupName="ITGroup" Checked="OnPositionSelected"></RadioButton>
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Label Content="Position Information" FontWeight="Bold"/>
+                                            </StackPanel>
+                                            <StackPanel Margin="0,10,0,0" Height="100" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Top" >
+                                                <StackPanel Width="400"  Orientation="Horizontal" VerticalAlignment="Center" >
+                                                    <Label Width="140" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Selected Position:"/>
+                                                    <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Game Developer" Name="lblSelectedPosition"/>
+                                                </StackPanel>
+                                                <StackPanel Width="400"  Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <Label Width="140" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Organization:"/>
+                                                    <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Unity Inc." Name="lblOrgranization"/>
+                                                </StackPanel>
+                                                <StackPanel Width="400"  Orientation="Horizontal" VerticalAlignment="Center" >
+                                                    <Label Width="140" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Location:"/>
+                                                    <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Surat" Name="lblLocation"/>
+                                                </StackPanel>
+                                                <StackPanel Width="400"  Orientation="Horizontal" VerticalAlignment="Center" >
+                                                    <Label Width="140" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Salary:"/>
+                                                    <Label Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Content="$175000" Name="lblSalary"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Height="60" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button  Height="30" Width="200" Name="btnBookInterview" Content="Book Interview" FontWeight="Bold" FontFamily="Nirmala UI" Background="#FF3A3737" Click="btnBookInterview_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Height="350" Width="1000" >
+                        <StackPanel Width="1000" Orientation="Vertical" VerticalAlignment="Center">
+                            <DataGrid AutoGenerateColumns="False" Name="candidateDataGrid"  Height="200" Margin="0 5 0 0" ItemsSource="{Binding MyInterview}">
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="DataGridRow">
+                                        <Setter Property="Background" Value="{Binding Path=., Converter={StaticResource SalaryConverter}}" />
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn  Header="Date" Binding="{Binding InterviewDate}"/>
+                                    <DataGridTextColumn  Header="Time" Binding="{Binding InterviewTime}"/>
+                                    <DataGridTextColumn  Header="Name" Binding="{Binding CandidateName }"/>
+                                    <DataGridTextColumn  Header="Email" Binding="{Binding CandidateEmail}"/>
+                                    <DataGridTextColumn  Header="Mobile" Binding="{Binding CandidateMobile}"/>
+                                    <DataGridTextColumn  Header="Age" Binding="{Binding CandidateAge}"/>
+                                    <DataGridTextColumn  Header="Gender" Binding="{Binding CandidateGender}"/>
+                                    <DataGridTextColumn  Header="Field" Binding="{Binding JobField}"/>
+                                    <DataGridTextColumn  Header="Position" Binding="{Binding JobPosition}"/>
+                                    <DataGridTextColumn  Header="Organization" Binding="{Binding JobOrganizarion}"/>
+                                    <DataGridTextColumn  Header="Location" Binding="{Binding JobLocation}"/>
+                                    <DataGridTextColumn  Header="Salary" Binding="{Binding JobSalary}"/>
+                                </DataGrid.Columns>
+                             
+                            </DataGrid>
+                            <StackPanel Margin="0,10,0,0" Height="35" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button  Height="30" Width="150" Name="btnSaveInterview" Content="Save Interview" FontWeight="Bold" Click="btnSaveInterview_Click"/>
+                                <Button  Height="30" Margin="50,0,0,0" Name="btnLoadInterview" Width="150" Content="Load Interview" FontWeight="Bold" Click="btnLoadInterview_Click"/>
+                                <Label Width="190" Margin="50,0,0,0" Height="30" FontSize="15" Content="Search by organization:"/>
+                                <ComboBox Width="150"  SelectedIndex="0" Name="cmbOrgranization" Height="30"/>
+                                <Button  Height="30" Width="80" Margin="20,0,0,0" Name="btnSearchInterview" Content="Search" FontWeight="Bold" Click="btnSearchInterview_Click"/>
+                                <Button  Height="30" Width="80" Margin="20,0,0,0" Name="btnReset" Content="Reset" FontWeight="Bold" Click="btnReset_Click" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

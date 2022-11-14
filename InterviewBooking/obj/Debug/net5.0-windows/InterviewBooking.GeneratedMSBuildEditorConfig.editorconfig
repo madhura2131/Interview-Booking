@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net5.0-windows
+build_property.TargetPlatformMinVersion = 7.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.PublishSingleFile = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = InterviewBooking
+build_property.ProjectDir = D:\Data\MSD Course\Courses\Sem 1\Courses\PROG8145-2-Software Development Techniques_ProfIgorP\Final Project\New folder\InterviewBooking (1)\InterviewBooking\InterviewBooking\

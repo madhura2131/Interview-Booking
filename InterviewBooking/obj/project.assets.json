@@ -1,0 +1,93 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Library/1.0.0": {
+      "type": "project",
+      "path": "../Library/Library.csproj",
+      "msbuildProject": "../Library/Library.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "Library >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Madhura Nitin Borkar\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Data\\MSD Course\\Courses\\Sem 1\\Courses\\PROG8145-2-Software Development Techniques_ProfIgorP\\Final Project\\New folder\\InterviewBooking (1)\\InterviewBooking\\InterviewBooking\\InterviewBooking.csproj",
+      "projectName": "InterviewBooking",
+      "projectPath": "D:\\Data\\MSD Course\\Courses\\Sem 1\\Courses\\PROG8145-2-Software Development Techniques_ProfIgorP\\Final Project\\New folder\\InterviewBooking (1)\\InterviewBooking\\InterviewBooking\\InterviewBooking.csproj",
+      "packagesPath": "C:\\Users\\Madhura Nitin Borkar\\.nuget\\packages\\",
+      "outputPath": "D:\\Data\\MSD Course\\Courses\\Sem 1\\Courses\\PROG8145-2-Software Development Techniques_ProfIgorP\\Final Project\\New folder\\InterviewBooking (1)\\InterviewBooking\\InterviewBooking\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Madhura Nitin Borkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {
+            "D:\\Data\\MSD Course\\Courses\\Sem 1\\Courses\\PROG8145-2-Software Development Techniques_ProfIgorP\\Final Project\\New folder\\InterviewBooking (1)\\InterviewBooking\\Library\\Library.csproj": {
+              "projectPath": "D:\\Data\\MSD Course\\Courses\\Sem 1\\Courses\\PROG8145-2-Software Development Techniques_ProfIgorP\\Final Project\\New folder\\InterviewBooking (1)\\InterviewBooking\\Library\\Library.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

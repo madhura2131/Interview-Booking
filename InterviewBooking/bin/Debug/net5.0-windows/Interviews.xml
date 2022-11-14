@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InterviewList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Interviews>
+    <Interview>
+      <InterviewTime>1:00 PM</InterviewTime>
+      <InterviewDate>12-10-2021</InterviewDate>
+      <Candidate>
+        <Name>Test</Name>
+        <EmailAddress>test@gmail.com</EmailAddress>
+        <MobileNumber>2223334444</MobileNumber>
+        <Age>25</Age>
+        <Gender>Male</Gender>
+      </Candidate>
+      <Job xsi:type="Architecture">
+        <JobTitle>Architect</JobTitle>
+        <Salary>44880</Salary>
+        <Location>Mississauga</Location>
+        <Organization>Bell</Organization>
+        <SelectedJob>Architect</SelectedJob>
+      </Job>
+    </Interview>
+    <Interview>
+      <InterviewTime>2:00 PM</InterviewTime>
+      <InterviewDate>12-10-2021</InterviewDate>
+      <Candidate>
+        <Name>Test</Name>
+        <EmailAddress>test@gmail.com</EmailAddress>
+        <MobileNumber>2223334444</MobileNumber>
+        <Age>25</Age>
+        <Gender>Male</Gender>
+      </Candidate>
+      <Job xsi:type="Business">
+        <JobTitle>HumanResourcesManager</JobTitle>
+        <Salary>51000</Salary>
+        <Location>Toronto</Location>
+        <Organization>GoreMutual</Organization>
+        <SelectedJob>HumanResourcesManager</SelectedJob>
+      </Job>
+    </Interview>
+    <Interview>
+      <InterviewTime>3:00 PM</InterviewTime>
+      <InterviewDate>12-10-2021</InterviewDate>
+      <Candidate>
+        <Name>Test</Name>
+        <EmailAddress>test@gmail.com</EmailAddress>
+        <MobileNumber>2223334444</MobileNumber>
+        <Age>25</Age>
+        <Gender>Male</Gender>
+      </Candidate>
+      <Job xsi:type="InformationTechnology">
+        <JobTitle>ComputerProgrammer</JobTitle>
+        <Salary>71400</Salary>
+        <Location>Waterloo</Location>
+        <Organization>IBM</Organization>
+        <SelectedJob>ComputerProgrammer</SelectedJob>
+      </Job>
+    </Interview>
+  </Interviews>
+</InterviewList>

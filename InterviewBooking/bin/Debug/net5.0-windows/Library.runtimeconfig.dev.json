@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\apk44\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\apk44\\.nuget\\packages"
+    ]
+  }
+}
